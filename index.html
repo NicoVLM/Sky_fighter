@@ -10,11 +10,11 @@
         gtag('config', 'G-SE42JCVMMX');
     </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Sky Fighter">
-    <meta name="theme-color" content="#0c1e3a">
+    <meta name="theme-color" content="#000000">
     <meta name="description" content="Sky Fighter — Arcade shooter, 15 niveaux, 100% procédural">
     <title>Sky Fighter</title>
     <link rel="manifest" href="./manifest.json">
@@ -23,22 +23,31 @@
     <link rel="icon" type="image/png" sizes="96x96" href="./icons/icon-96x96.png">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
+        html, body {
             background: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
             touch-action: none;
             -webkit-touch-callout: none;
             -webkit-user-select: none;
             user-select: none;
         }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+        }
         #game-container {
             width: 100%;
+            height: 100%;
             max-width: 1280px;
-            aspect-ratio: 16 / 9;
+            max-height: 720px;
+        }
+        #game-container canvas {
+            display: block;
+            margin: auto;
         }
     </style>
 </head>
