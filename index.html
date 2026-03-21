@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Sky Fighter">
+    <meta name="theme-color" content="#0c1e3a">
+    <meta name="description" content="Sky Fighter — Arcade shooter, 15 niveaux, 100% procédural">
+    <title>Sky Fighter</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="apple-touch-icon" href="./icons/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192x192.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            touch-action: none;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        #game-container {
+            width: 100%;
+            max-width: 1280px;
+            aspect-ratio: 16 / 9;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container"></div>
+    <script src="./phaser.js"></script>
+    <script type="module" src="./src/main.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js').catch(() => {});
+        }
+    </script>
+</body>
+</html>
