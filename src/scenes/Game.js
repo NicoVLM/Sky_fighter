@@ -191,7 +191,7 @@ export class Game extends Phaser.Scene {
         // Spawner (level-scaled delay)
         this.time.addEvent({delay:Math.round(this.cfg.spawnDelay),loop:true,callback:()=>{
             if(this.isPaused||this.cheatActive)return;
-            this.enemies.push({x:1300,y:Phaser.Math.Between(50,650),gfx:this.add.graphics().setDepth(8)});
+            this.enemies.push({x:1300,y:Phaser.Math.Between(60,640),gfx:this.add.graphics().setDepth(8)});
         }});
     }
 
@@ -771,7 +771,7 @@ export class Game extends Phaser.Scene {
         }
 
         this.player.y += moveDir * this.cfg.playerSpeed;
-        this.player.y=Phaser.Math.Clamp(this.player.y,50,680);
+        this.player.y=Phaser.Math.Clamp(this.player.y,60,660);
 
         // ── Shooting: keyboard + touch fire button ──
         let wantsToFire = Phaser.Input.Keyboard.JustDown(this.spaceKey);
